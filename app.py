@@ -1,6 +1,6 @@
-import json
+import json,os
 from sys import argv
-from bottle import route,run,template, static_file,request,redirect,response,get
+from bottle import *
 
 
 
@@ -165,6 +165,4 @@ def bilar():
     dData = json.load(ioStream)
     ioStream.close()
     return template('index2.tpl',gogn = dData)
-"run(host='localhost', port=8080, debug=True, Realoader=True)"
-#run(host='0.0.0.0', port=argv[1])
-run()
+run(app=app,host='0.0.0.0',port=os.environ.get('PORT'))
