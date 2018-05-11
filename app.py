@@ -165,4 +165,5 @@ def bilar():
     dData = json.load(ioStream)
     ioStream.close()
     return template('index2.tpl',gogn = dData)
-run(app=app,host='0.0.0.0',port=os.environ.get('PORT'))
+
+run(host='0.0.0.0',port=os.environ.get('PORT'))
